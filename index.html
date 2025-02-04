@@ -6,7 +6,7 @@
     <script src="myscripts.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
@@ -20,17 +20,17 @@
         <div class="content">
             <div class="top">
                 <p>
-                    This is not a real online service! You know something like this in your life will help you realize your
-                    deepest dreams.
-                    Sign up now to get started. 
+                    This is not a real online service! You know something like this in your life will help you realize
+                    your deepest dreams. Sign up now to get started.
                 </p>
                 <p>You <em>know</em> you want to.</p>
             </div>
-            <form id="signup-form">
+
+            <form id="signup-form" onsubmit="return validateForm()" method="post" name="form">
                 <fieldset>
                     <p>Let's do this!</p>
+
                     <div class="form-row">
-                        
                         <div class="input-group">
                             <label for="First_name">First Name</label>
                             <input type="text" name="First" id="First_name" required>
@@ -41,7 +41,6 @@
                             <input type="text" name="Last" id="Last_name" required>
                         </div>
                     </div>
-
                     <div class="form-row">
                         <div class="input-group">
                             <label for="email">Email</label>
@@ -50,7 +49,7 @@
 
                         <div class="input-group">
                             <label for="number">Phone Number</label>
-                            <input type="tel" name="number" id="number">
+                            <input type="tel" name="number" id="number" pattern="^\d{10}$" required>
                         </div>
                     </div>
 
@@ -66,14 +65,16 @@
                         </div>
                     </div>
                 </fieldset>
-
             </form>
-            <button type="submit">Create Account</button>
 
+            <div class="form-row">
+                <button type="button" onclick="submitForm()">Create Account</button>
+            </div>
 
             <div class="already">Already have an account? <a href="/login">Log in</a></div>
         </div>
     </div>
+
 </body>
 
 </html>

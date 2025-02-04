@@ -128,3 +128,15 @@ fieldset p{
     font-size: 1.3em;
     font-weight: 600;
 }
+input {
+    border: 2px solid black;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid lightblue;
+}
+
+input.user-touched:invalid {
+    border: 2px solid red;
+}
